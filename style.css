@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;        /* Controls the size of your logo naturally */
+    width: auto;         /* Maintains your logo's aspect ratio perfectly */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Optional interactive hover effect */
+.logo img:hover {
+    transform: scale(1.05);
+}
+body{
+    min-height:100vh;
+    background:#d7c8ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+    background:#050510;
+    border-radius:25px;
+    padding:30px 50px;
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.4),
+    0 0 80px rgba(138,43,226,.4);
+}
+
+.container::before{
+    content:'';
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#8b5cf6;
+    border-radius:50%;
+    filter:blur(120px);
+    top:-100px;
+    left:-100px;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#9d5cff;
+}
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    align-items:center;
+    min-height:80vh;
+}
+
+.left-content p{
+    color:#9d5cff;
+    font-size:24px;
+}
+
+.left-content h1{
+    color:white;
+    font-size:60px;
+    line-height:1;
+    margin-top:10px;
+}
+
+.image-section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glow{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    filter: blur(100px);
+
+    z-index: 1;   /* Behind image */
+}
+
+.image-section img{
+    width: 340px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 100%;
+    position: relative;
+    z-index: 2;   /* Above glow */
+}
+
+.right-content{
+    text-align:left;
+}
+
+.right-content p{
+    color:#9d5cff;
+    font-size:24px;
+}
+
+.right-content h2{
+    color:white;
+    font-size:55px;
+    line-height:1;
+}
+
+.resume-btn{
+    display:inline-block;
+    margin-top:40px;
+    color:white;
+    text-decoration:none;
+    border:1px solid #8b5cf6;
+    padding:12px 25px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.resume-btn:hover{
+    background:#8b5cf6;
+}
+
+.socials{
+    margin-top:100px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.socials a{
+    color:white;
+    font-size:22px;
+    transition:.3s;
+}
+
+.socials a:hover{
+    color:#9d5cff;
+    transform:translateX(8px);
+}
+
+@media(max-width:900px){
+
+.hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:30px;
+}
+
+.socials{
+    flex-direction:row;
+    justify-content:center;
+    margin-top:30px;
+}
+
+.left-content h1,
+.right-content h2{
+    font-size:42px;
+}
+
+.right-content{
+    text-align:center;
+}
+}
+
+/* ABOUT SECTION */
+
+.about{
+    padding:100px 50px;
+    margin-top:50px;
+}
+
+.about-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    flex-wrap:wrap;
+}
+
+.about-image img{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #8b5cf6;
+    box-shadow:0 0 25px rgba(139,92,246,.4);
+}
+
+.about-content{
+    max-width:650px;
+}
+
+.about-content h2{
+    color:#8b5cf6;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.about-content p{
+    color:#ddd;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.skills span{
+    padding:10px 18px;
+    border:1px solid #8b5cf6;
+    border-radius:30px;
+    color:white;
+    transition:0.3s;
+}
+
+.skills span:hover{
+    background:#8b5cf6;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+@media(max-width:900px){
+
+    .about{
+        padding:70px 20px;
+    }
+
+    .about-container{
+        text-align:center;
+    }
+
+    .about-image img{
+        width:260px;
+        height:340px;
+    }
+
+    .about-content h2{
+        font-size:34px;
+    }
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    padding: 80px 50px;
+    margin-top: 50px;
+    position: relative;
+}
+
+/* Reusable section title style matching the design vibe */
+.section-title {
+    color: #8b5cf6;
+    font-size: 42px;
+    text-align: right;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+/* Left Content Design */
+.contact-left {
+    flex: 1;
+    max-width: 450px;
+}
+
+.contact-left h3 {
+    color: white;
+    font-size: 42px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+/* Abstract wave accents beneath text */
+.decorative-waves {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.decorative-waves span {
+    display: block;
+    height: 4px;
+    background: linear-gradient(90deg, #8b5cf6, transparent);
+    border-radius: 2px;
+}
+
+.decorative-waves span:nth-child(1) { width: 120px; }
+.decorative-waves span:nth-child(2) { width: 80px; }
+
+/* Right Form Design */
+.contact-right {
+    flex: 1.2;
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Fields styled to mirror the dark glass look in image_664b08.png */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Gradient-border glow effect on focus matching the active image field */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #9d5cff;
+    box-shadow: 0 0 15px rgba(157, 92, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Form Action button matching your existing portfolio scheme */
+.submit-btn {
+    align-self: flex-start;
+    background: transparent;
+    color: white;
+    border: 1px solid #8b5cf6;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #8b5cf6;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+/* RESPONSIVE BREAKPOINT FOR TABLETS/PHONES */
+@media (max-width: 900px) {
+    .contact {
+        padding: 60px 20px;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .contact-left {
+        max-width: 100%;
+    }
+    
+    .contact-left h3 {
+        font-size: 32px;
+    }
+    
+    .decorative-waves {
+        align-items: center;
+        display: none; /* Keeps mobile form neat and clean */
+    }
+    
+    .form-group label {
+        text-align: left;
+    }
+    
+    .submit-btn {
+        align-self: center;
+        width: 100%;
+    }
+}
+
+/* PROJECTS SECTION */
+
+.projects {
+    padding: 80px 50px;
+    margin-top: 50px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Glassmorphism Card Design matching your portfolio dark base */
+.project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 35px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Elegant radial hover glow behind cards */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent 60%);
+    opacity: 0;
+    transition: 0.4s ease;
+    z-index: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(138, 43, 226, 0.15);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Categorization Tag Style */
+.project-tag {
+    display: inline-block;
+    color: #9d5cff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: #b3b3cb;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Mini Tech Pill Elements inside cards */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.project-tech span {
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: #c084fc;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Links inside cards */
+.project-links {
+    display: flex;
+    gap: 20px;
+}
+
+.proj-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.proj-link i {
+    font-size: 16px;
+    color: #8b5cf6;
+}
+
+.proj-link:hover {
+    color: #9d5cff;
+}
+
+/* RESPONSIVE RESPONSIVENESS */
+@media (max-width: 900px) {
+    .projects {
+        padding: 60px 20px;
+    }
+    .project-card {
+        padding: 30px 20px;
+    }
+}
