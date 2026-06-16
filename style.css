@@ -115,12 +115,13 @@ nav a:hover {
 /* HERO SECTION */
 .hero {
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-columns: 0.3fr 1.2fr 1.5fr 1fr; /* Added a dedicated narrow column for socials on the left */
     align-items: center;
     min-height: 80vh;
     position: relative;
-    padding-left: 50px; /* Room for the absolute floating socials bar */
+    gap: 20px; /* Adds safe breathing room between columns */
 }
+
 
 .left-content {
     position: relative;
@@ -205,14 +206,12 @@ nav a:hover {
 
 /* FLOATING SOCIAL LINKS BAR */
 .socials {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    /* REMOVED position: absolute and left: 0 */
     display: flex;
     flex-direction: column;
     gap: 25px;
     z-index: 10;
+    align-items: flex-start; /* Aligns them cleanly to the left edge of their own grid column */
 }
 
 .socials a {
@@ -557,11 +556,10 @@ nav a:hover {
 
     /* Hero Responsive Stack */
     .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Forces everything into a clean vertical line on mobile */
         text-align: center;
         gap: 35px;
         min-height: auto;
-        padding-left: 0;
         margin-top: 20px;
     }
 
@@ -582,7 +580,7 @@ nav a:hover {
     .socials {
         position: static;
         transform: none;
-        flex-direction: row;
+        flex-direction: row; /* Keeps it horizontal on mobile screens just how you like it */
         justify-content: center;
         margin-top: 20px;
         gap: 30px;
